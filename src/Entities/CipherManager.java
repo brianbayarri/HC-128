@@ -32,7 +32,7 @@ public class CipherManager {
 		
 		byte[] encryptedBody = cipher.encryption(bytesBody);
 		
-		File encryptedFile = new File(".\\Images\\temp.bmp");
+		File encryptedFile = new File("Imagenes\\temp.bmp");
 		FileManager.byteToFile(bytesHeader, encryptedBody, encryptedFile);
 		return encryptedFile;
 	}
