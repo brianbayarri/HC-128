@@ -164,6 +164,11 @@ public class HC128Main extends JFrame {
 				if (option == JFileChooser.APPROVE_OPTION) 
 				{
 					imageSelectedFile = jf.getSelectedFile();
+					if (!imageSelectedFile.getName().endsWith(".bmp"))
+					{
+						JOptionPane.showMessageDialog(null, "La extension de la imagen debe ser \".bmp\"", "Error", JOptionPane.ERROR_MESSAGE);
+						return;
+					}
 					txt_Image.setText(imageSelectedFile.getName());
 					BufferedImage imageSelected;
 					try 
