@@ -79,7 +79,7 @@ public class HC128 {
 
 	public byte[] encryption(byte[] data) {
 		int index = 0;
-		byte[] s = new byte[data.length];
+		byte[] dataEncrypted = new byte[data.length];
 		int newInteg;
 		for (int i = 0; i < data.length; i++) {
 			if (index == 0) {
@@ -101,8 +101,8 @@ public class HC128 {
 			}
 			byte feedback = buffer[index];
 			index = index + 1 & 0x3;
-			s[i] = (byte) (data[i] ^ feedback);
+			dataEncrypted[i] = (byte) (data[i] ^ feedback);
 		}
-		return s;
+		return dataEncrypted;
 	}
 }
